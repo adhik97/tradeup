@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="register.css">
+    <style>
+        p.alert {
+            margin-left: 5px;
+            margin-right: 5px;
+            color: darkred;
+            border: 1px solid grey;
+            background-color: whitesmoke;
+            padding:10px;
+            border-radius: 7px;
+            width: inherit;
+        }
+    </style>
+</head>
+<body>
+
+<form action="/registerSubmit" method="post">
+    <p class="alert"><strong><%= xx %></strong></p>
+
+    <h1>Sign Up</h1>
+
+    <fieldset>
+        <legend><span class="number">1</span>Your basic info</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name">
+
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="user_email">
+
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="user_age">
+
+    </fieldset>
+
+    <fieldset>
+        <legend><span class="number">2</span>Your password</legend>
+
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="user_password">
+
+        <label for="cpassword">Confirm Password:</label>
+        <input type="password" id="cpassword" name="user_cpassword">
+    </fieldset>
+    <fieldset>
+        <legend><span class="number">3</span>Your address</legend>
+        <label for="bio">Address:</label>
+        <textarea id="bio" name="user_add"></textarea>
+
+        <label for="ph">Phone number:</label>
+        <input type="number" name="phno" id="ph">
+
+
+
+    </fieldset>
+
+    <button type="submit">Register</button>
+</form>
+
+</body>
+</html>

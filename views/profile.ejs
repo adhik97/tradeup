@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        body {
+            background: url("images/back.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        html,body
+        {
+            height:100%;
+            width:100%;
+        }
+
+
+        .container { background-color:white;
+
+
+        }
+        .shadow {
+                box-shadow: 10px 10px 5px #888888;
+        }
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">TradeUp</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li ><a href="/home">Home</a></li>
+                <li ><a href="about.html">About</a></li>
+                <li ><a href="contact.html">Contact</a></li>
+                <li class="dropdown active">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Hey there!
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="active"><a href="#">My profile</a></li>
+                        <li><a href="/upload">Upload</a></li>
+                        <li><a href="/products">My products</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/signout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container shadow">
+    <img src="images/profile.png" class="img-responsive" style="margin:0px">
+
+    <br>
+
+    <div class="tab-content">
+        <div id="profile" class="tab-pane fade in active" style="font-size:20px;margin:30px;">
+            <br>
+            <div class="row">
+            <br>
+            <p class="col-sm-2 text-right">
+                <strong>Name :</strong> </p><p class="col-sm-10" ><%= data.name %>
+            <p class="col-sm-2 text-right">
+                <strong>Email :</strong> </p><p class="col-sm-10" ><%= data.email %>
+            </p>
+            <p class="col-sm-2 text-right">
+                <strong>Age :</strong> </p><p class="col-sm-10" ><%= data.age %>
+            </p>
+            <p class="col-sm-2 text-right">
+                <strong>Address :</strong> </p><p class="col-sm-10"><%= data.add %>
+
+            </p>
+            <p class="col-sm-2 text-right">
+                <strong>Phone number :</strong> </p><p class="col-sm-10" ><%= data.num %>
+
+            </p>
+            </div>
+            <br>
+
+            <br>
+            <p class="text-center"><a href="#profile2" class="btn btn-primary btn-lg btn-block"data-toggle="tab" >Edit</a></p>
+        </div>
+        <div id="profile2" class="tab-pane" style="font-size:20px;margin:30px;">
+
+            <form class="form-horizontal" action="/save" method="post">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="name">Name:</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Your name" value="<%= data.name %>" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Email:</label>
+                    <div class="col-sm-10">
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Your email" value="<%= data.email %>"  disabled>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="age">Age:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="age" placeholder="Your age" value="<%= data.age %>" disabled>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="address">Address:</label>
+                    <div class="col-sm-10">
+                        <textarea rows="3" name="add" class="form-control" id="address" placeholder="Your address"><%= data.add %></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="number">Number:</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="num" class="form-control" id="number" placeholder="Your number" value="<%= data.num %>" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-success btn-lg btn-block">Save</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+</div>
+
+</body>
+</html>

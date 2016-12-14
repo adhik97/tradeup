@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <style>
+
+    @font-face {
+      font-family: 'Nunito';
+      font-style: normal;
+      font-weight: 300;
+      src: local('Nunito-Light'), url(NunitoLight.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+    }
+
+    @font-face {
+      font-family: 'Nunito';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Nunito-Regular'), url(NunitoRegular.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+    }
+
+    p {font-size: 20px; font-weight: normal; line-height: 48px; margin: 0; text-align:center;}
+
+    input[type=button]
+    {
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+    }
+ button {
+
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+   font-family: 'Nunito', sans-serif;
+
+ }
+
+
+
+    html {
+      background: url("images/Hi.jpg") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+
+    }
+ body {
+   font-family: 'Nunito', sans-serif;
+ }
+
+    table,tr,td { border:none;  text-align:center; padding:3px; }
+
+    .logn {
+      background-color: #008ae6;
+    }
+
+    .regtr {
+      background-color: #40bf40;
+
+    }
+
+    input[type=email],input[type=password]{
+      border: 5px solid white; width:21em;
+      -webkit-box-shadow:
+              inset 0 0 8px  rgba(0,0,0,0.1),
+              0 0 16px rgba(0,0,0,0.1);
+      -moz-box-shadow:
+              inset 0 0 8px  rgba(0,0,0,0.1),
+              0 0 16px rgba(0,0,0,0.1);
+      box-shadow:
+              inset 0 0 8px  rgba(0,0,0,0.1),
+              0 0 16px rgba(0,0,0,0.1);
+      padding: 15px;
+      background: rgba(255,255,255,0.5);
+      margin: 0 0 10px 0;
+      font-family: 'Nunito', sans-serif;
+    }
+
+
+     p.alert {
+       margin-left: 5px;
+       margin-right: 5px;
+       color: indianred;
+       border: 1px solid grey;
+       background-color: #e8eeef;
+       padding:10px;
+       border-radius: 7px;
+     }
+
+  </style>
+  <title>Trade - Log In</title>
+</head>
+<body><br>
+<br><br>
+<div align=center>
+  <form name="login" method="post" action="/signin">
+    <table>
+      <tr>
+        <td colspan=2 style="padding:15px;"><img src="images/trade.png" alt="logo" width="232.2px" height="108.6px"></td>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <p><strong>Email</strong><p/><input type="email" id="lemail" name="lemail">
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <p><strong>Password</strong></p><input type="password" name="lpass" id="lpass">
+        </td>
+      </tr>
+      <tr style="text-align:left;">
+        <td>
+          <button type="submit"  class="logn">Log me in</button>
+        </td>
+        <td>
+
+            <input type="button" class="regtr" onclick="location.href = '/register';" value="Register">
+
+        </td>
+      </tr>
+    </table>
+
+  </form>
+
+</body>
+</html>
